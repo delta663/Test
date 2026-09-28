@@ -1,0 +1,6 @@
+{
+  "name": "CHINA RE:FORM — Contemporary Chinese Upcycled Furniture",
+  "description": "เปลี่ยนพลาสติก PP เหลือใช้จากโรงงานอุตสาหกรรม ให้กลายเป็นเก้าอี้จีนร่วมสมัยที่มีเอกลักษณ์เฉพาะตัว ผสานระบบหน้าร้านและระบบบริหารจัดการหลังบ้าน CRM",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
