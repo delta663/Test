@@ -75,8 +75,8 @@ interface StoreContextType {
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
 const STORAGE_KEYS = {
-  PRODUCTS: 'china_reform_products_v1',
-  ORDERS: 'china_reform_orders_v1',
+  PRODUCTS: 'china_reform_products_v2',
+  ORDERS: 'china_reform_orders_v2',
   STOCK_MOVEMENTS: 'china_reform_movements_v1',
   CUSTOMERS: 'china_reform_customers_v1',
   REWARDS: 'china_reform_rewards_v1',
