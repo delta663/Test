@@ -166,13 +166,27 @@ const AppContent: React.FC = () => {
                       <p className="text-xs text-neutral-400 mt-0.5">{item.desc}</p>
                     </div>
                     <div className="flex items-center gap-2 pt-2 border-t border-white/5">
-                      <a
-                        href={item.src}
-                        download={item.filename}
+                      <button
+                        onClick={async () => {
+                          try {
+                            const res = await fetch(item.src);
+                            const blob = await res.blob();
+                            const blobUrl = window.URL.createObjectURL(blob);
+                            const link = document.createElement("a");
+                            link.href = blobUrl;
+                            link.download = item.filename;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            window.URL.revokeObjectURL(blobUrl);
+                          } catch (e) {
+                            window.open(item.src, "_blank");
+                          }
+                        }}
                         className="flex-1 py-2 px-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer text-center"
                       >
                         ⬇️ ดาวน์โหลดไฟล์ .jpg
-                      </a>
+                      </button>
                       <a
                         href={item.src}
                         target="_blank"
