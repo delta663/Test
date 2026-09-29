@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useStore } from '../../context/StoreContext';
 import { Product, GradientType } from '../../types';
-import { Sparkles, ShoppingBag, Eye, SlidersHorizontal, Check } from 'lucide-react';
+import { Sparkles, ShoppingBag, Eye, SlidersHorizontal, Check, Download, Image as ImageIcon } from 'lucide-react';
 
 export const CollectionSection: React.FC = () => {
   const { products, setSelectedProductForConfig, addToCart } = useStore();
@@ -35,9 +35,29 @@ export const CollectionSection: React.FC = () => {
             <div className="text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-medium mb-2">
               02. Signature Gradient Collections
             </div>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
-              4 คอลเลกชันเก้าอี้จีนร่วมสมัย
-            </h2>
+            <div className="flex flex-wrap items-center gap-3">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+                4 คอลเลกชันเก้าอี้จีนร่วมสมัย
+              </h2>
+              <a
+                href="/downloads/contemporary_ming_chairs_collection.zip"
+                download="contemporary_ming_chairs_collection.zip"
+                className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-md bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#D4AF37] border border-[#D4AF37]/30 transition-colors"
+                title="ดาวน์โหลดไฟล์รูปภาพทั้งหมดรวมเป็น ZIP"
+              >
+                <Download className="w-3 h-3" />
+                <span>โหลดรูปทั้งหมด (ZIP 4.3MB)</span>
+              </a>
+              <a
+                href="/download-images.html"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-md bg-white/10 hover:bg-white/20 text-neutral-200 border border-white/20 transition-colors"
+              >
+                <ImageIcon className="w-3 h-3" />
+                <span>หน้าคลังรูปภาพ</span>
+              </a>
+            </div>
             <p className="text-sm text-neutral-400 mt-2 max-w-xl">
               แต่ละชิ้นงานถ่ายทอดการไหลตัวของเฉดสีมงคลและสัจจะวัสดุของ PP บริสุทธิ์ หล่อหลอมใหม่ด้วยมือร่วมกับหุ่นยนต์หล่อความดันสูง
             </p>
@@ -151,11 +171,20 @@ export const CollectionSection: React.FC = () => {
                         e.stopPropagation();
                         setSelectedProductForConfig(product);
                       }}
-                      className="px-3.5 py-2 rounded-lg bg-white text-black text-xs font-semibold flex items-center gap-1.5 shadow-lg hover:bg-neutral-100 cursor-pointer"
+                      className="px-3 py-2 rounded-lg bg-white text-black text-xs font-semibold flex items-center gap-1.5 shadow-lg hover:bg-neutral-100 cursor-pointer"
                     >
                       <SlidersHorizontal className="w-3.5 h-3.5" />
-                      <span>ปรับแต่งสเปก</span>
+                      <span>ปรับแต่ง</span>
                     </button>
+                    <a
+                      href={product.image.replace("/src/assets/images/", "/downloads/")}
+                      download
+                      onClick={(e) => e.stopPropagation()}
+                      title="ดาวน์โหลดรูปภาพไฟล์ต้นฉบับ"
+                      className="p-2 rounded-lg bg-black/80 hover:bg-black text-white border border-white/20 text-xs font-semibold flex items-center gap-1 shadow-lg transition-colors cursor-pointer"
+                    >
+                      <Download className="w-3.5 h-3.5 text-neutral-200" />
+                    </a>
                   </div>
                 </div>
 
