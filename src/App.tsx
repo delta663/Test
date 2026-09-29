@@ -202,13 +202,22 @@ const AppContent: React.FC = () => {
             </div>
 
             <div className="p-4 border-t border-white/10 bg-black/60 flex items-center justify-between">
-              <a
-                href="/downloads/contemporary_ming_chairs_collection.zip"
-                download="contemporary_ming_chairs_collection.zip"
-                className="text-xs text-amber-400 hover:underline flex items-center gap-1"
-              >
-                <span>📦</span> ต้องการโหลดรวมทุกภาพเป็นไฟล์ ZIP (4.3 MB) คลิกที่นี่
-              </a>
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="/china-reform-project.zip"
+                  download="china-reform-project.zip"
+                  className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <span>📦</span> โหลดทั้งโปรเจกต์ (Full Project ZIP 18MB)
+                </a>
+                <a
+                  href="/downloads/contemporary_ming_chairs_collection.zip"
+                  download="contemporary_ming_chairs_collection.zip"
+                  className="text-xs text-neutral-300 hover:text-white underline flex items-center gap-1"
+                >
+                  <span>🖼️</span> เฉพาะไฟล์รูปภาพรวม (4.3 MB)
+                </a>
+              </div>
               <button
                 onClick={() => setShowImageGalleryModal(false)}
                 className="px-4 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs text-white cursor-pointer"
