@@ -24,7 +24,7 @@ export const ProductManagement: React.FC = () => {
   const [ppDivertedKg, setPpDivertedKg] = useState(8.5);
   const [descriptionTh, setDescriptionTh] = useState('');
   const [descriptionEn, setDescriptionEn] = useState('');
-  const [image, setImage] = useState('/src/assets/images/chair_red_orange_1790608936533.jpg');
+  const [image, setImage] = useState('/downloads/chair_red_orange_1790608936533.jpg');
 
   const openCreateModal = () => {
     setEditingProduct(null);
@@ -42,7 +42,7 @@ export const ProductManagement: React.FC = () => {
     setPpDivertedKg(8.4);
     setDescriptionTh('เก้าอี้จีนร่วมสมัยหล่อหลอมจากพลาสติก PP รีไซเคิล');
     setDescriptionEn('Contemporary Chinese chair from upcycled industrial PP.');
-    setImage('/src/assets/images/chair_red_orange_1790608936533.jpg');
+    setImage('/downloads/chair_red_orange_1790608936533.jpg');
     setIsModalOpen(true);
   };
 

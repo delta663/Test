@@ -177,7 +177,7 @@ export const CollectionSection: React.FC = () => {
                       <span>ปรับแต่ง</span>
                     </button>
                     <a
-                      href={product.image.replace("/src/assets/images/", "/downloads/")}
+                      href={product.image}
                       download
                       onClick={(e) => e.stopPropagation()}
                       title="ดาวน์โหลดรูปภาพไฟล์ต้นฉบับ"
